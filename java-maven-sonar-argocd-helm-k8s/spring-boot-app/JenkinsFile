@@ -5,6 +5,15 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        // Add more stages as needed
+    }
+}
   stages {
     stage('Checkout') {
       steps {
